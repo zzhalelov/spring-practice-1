@@ -7,11 +7,16 @@
 </head>
 <body>
 <div th:each="product:${products}">
-    <div>Продукты:</div>
-    <div>Наименование продукта: <span th:text="${product.name}"></span></div>
-    <div>Цена продукта: <span th:text="${product.price}"></span></div>
-    <br>
+    <ul>
+        <li>
+            <div>Наименование продукта: <span th:text="${product.name}"></span></div>
+        </li>
+        <div>Цена продукта: <span th:text="${product.price}"></span></div>
+        <br>
+    </ul>
 </div>
-
+<div style="font-weight: bold; color: darkred; font-size: 20px">
+    Итого стоимость товаров: <span th:text="${total}"></span>
+</div>
 </body>
 </html>
