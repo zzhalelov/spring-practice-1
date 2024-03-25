@@ -17,6 +17,18 @@ public class ProductController {
         productList.add(new Product("Ritter Sport", 500));
         productList.add(new Product("Chocolate Kazakhstan", 650));
         model.addAttribute("products", productList);
+
+        int total = getTotal(productList);
+        model.addAttribute("total", total);
+
         return "products";
+    }
+
+    public int getTotal(List<Product> productList) {
+        int total = 0;
+        for (Product product : productList) {
+            total += product.getPrice();
+        }
+        return total;
     }
 }
