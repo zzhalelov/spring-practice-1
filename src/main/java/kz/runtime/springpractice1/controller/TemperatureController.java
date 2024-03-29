@@ -14,12 +14,12 @@ public class TemperatureController {
     }
 
     @PostMapping("/converter")
-    public String convert(@RequestParam("value") double value, @RequestParam("select") String select, Model model) {
+    public String convert(@RequestParam("value") double value, @RequestParam("scale") String scale, Model model) {
         double result;
-        if (select.equals("F")) {
+        if (scale.equals("F")) {
             result = ((value * 9) / 5) + 32;
         } else {
-            result = (value * 9 / 5) + 32;
+            result = ((value - 32) * 5) / 9;
         }
         model.addAttribute("result", result);
         return "converter";
