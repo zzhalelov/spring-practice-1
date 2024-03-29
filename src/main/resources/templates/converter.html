@@ -5,17 +5,21 @@
     <title>Temperature Converter</title>
 </head>
 <body>
-<h2>Конвертер температуры</h2>
-<form>
-    <label>Температура:</label><br>
-    <input>
+<h1>Конвертер температуры:</h1>
+
+<form method="post">
+    <label for="value">Введите искомое значение:</label>
+    <input type="text" id="value" name="value">
     <br>
+    <label>Перевести в градусы:</label>
     <select>
-        <option>по Цельсию</option>
-        <option>по Фаренгейту</option>
+        <option value="C">Цельсия</option>
+        <option value="F">Фаренгейта</option>
     </select>
-    <br>
-    <p>Результат:</p>
 </form>
+<br>
+<button type="calculate">Конвертировать</button>
+
+<p>Результат: <span th:text="${result}"></span></p>
 </body>
 </html>
