@@ -7,19 +7,18 @@
 <body>
 <h1>Конвертер температуры:</h1>
 
-<form method="post">
+<form action="/converter" method="post">
     <label for="value">Введите искомое значение:</label>
     <input type="text" id="value" name="value">
     <br>
     <label>Перевести в градусы:</label>
-    <select>
+    <select name="scale">
         <option value="C">Цельсия</option>
         <option value="F">Фаренгейта</option>
     </select>
+    <br>
+    <button type="submit">Конвертировать</button>
 </form>
-<br>
-<button type="calculate">Конвертировать</button>
-
 <p>Результат: <span th:text="${result}"></span></p>
 </body>
 </html>
