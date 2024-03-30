@@ -15,11 +15,16 @@ public class TemperatureController {
 
     @PostMapping("/converter")
     public String convert(@RequestParam("value") double value, @RequestParam("scale") String scale, Model model) {
-        double result;
+        double output;
+        String result;
         if (scale.equals("F")) {
-            result = ((value * 9) / 5) + 32;
+            output = ((value * 9) / 5) + 32;
+            result = String.format("%.2f", output);
+//            model.addAttribute("result", value + " градусов Цельсия это " + result + " градусов Фаренгейта");
         } else {
-            result = ((value - 32) * 5) / 9;
+            output = ((value - 32) * 5) / 9;
+            result = String.format("%.2f", output);
+//            model.addAttribute("result", value + " градусов Фаренгейта это " + result + " градусов Цельсия");
         }
         model.addAttribute("result", result);
         return "converter";
