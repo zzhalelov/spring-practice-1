@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Category</title>
+</head>
+<body>
+<div>
+    <form action="/category/create" method="post">
+        <label>Введите наименование категории:</label>
+        <br>
+        <input type="text" name="name">
+        <br>
+        <button type="submit">
+            Создать категорию
+        </button>
+    </form>
+    <div>
+        <p>Результат: </p>
+    </div>
+    <br>
+    <p>КАТЕГОРИИ ТОВАРОВ:</p>
+    <div th:each="category:${categories}">
+        <ul>
+            <li>
+                <div>
+                    <span th:text="${category.name}"></span>
+                    <br>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
