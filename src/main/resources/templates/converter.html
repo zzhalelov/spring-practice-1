@@ -42,7 +42,10 @@ height: 50px">
             Конвертировать
         </button>
     </form>
-    <p style="color: darkred; font-weight: bold; font-size: 30px">Результат: <span th:text="${result}"></span></p>
+    <div style="color: darkred; font-weight: bold; font-size: 30px">
+        <p>Результат:</p>
+        <p th:text="${result}"></p>
+    </div>
 </div>
 </body>
 </html>
