@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<div>
+    <form action="/calc" method="get">
+        <div>
+            <label>Введите первое значение</label>
+            <input type="text" name="value1">
+        </div>
+        <br>
+        <div>
+            <label>Введите знак действия (+, -, *, /)</label>
+            <input type="text" name="operator">
+        </div>
+        <br>
+        <div>
+            <label>Введите второе значение</label>
+            <input type="text" name="value2">
+        </div>
+        <br>
+        <button type="submit">
+            Рассчитать
+        </button>
+    </form>
+    <div>
+        <p>Результат:</p>
+        <p th:text="${result}"></p>
+    </div>
+</div>
+</body>
+</html>
