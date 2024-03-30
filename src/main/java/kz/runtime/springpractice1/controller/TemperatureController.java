@@ -20,13 +20,12 @@ public class TemperatureController {
         if (scale.equals("F")) {
             output = ((value * 9) / 5) + 32;
             result = String.format("%.2f", output);
-//            model.addAttribute("result", value + " градусов Цельсия это " + result + " градусов Фаренгейта");
+            model.addAttribute("result", value + " градусов Цельсия это " + result + " градусов Фаренгейта");
         } else {
             output = ((value - 32) * 5) / 9;
             result = String.format("%.2f", output);
-//            model.addAttribute("result", value + " градусов Фаренгейта это " + result + " градусов Цельсия");
+            model.addAttribute("result", value + " градусов Фаренгейта это " + result + " градусов Цельсия");
         }
-        model.addAttribute("result", result);
         return "converter";
     }
 }
