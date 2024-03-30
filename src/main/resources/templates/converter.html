@@ -3,26 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Temperature Converter</title>
+    <style>
+        body {
+            background-image: url("https://37.mchs.gov.ru/uploads/resize_cache/news/2022-11-29/vnimanie-izmenenie-temperatury-vozduha_1669748106617626522__800x800.jpg");
+            background-size: cover;
+        }
+
+        button:hover {
+            background-color: mediumspringgreen;
+            transition: background-color 0.3s ease;
+        }
+    </style>
 </head>
 <body>
-<h1>Конвертер температуры:</h1>
-
-<form action="/converter" method="post">
-    <div>
-        <label for="value">Введите искомое значение:</label>
-        <input type="text" id="value" name="value">
-    </div>
-    <br>
-    <div>
-        <label>Перевести в градусы:</label>
-        <select name="scale">
-            <option value="C">Цельсия</option>
-            <option value="F">Фаренгейта</option>
-        </select>
-    </div>
-    <br>
-    <button type="submit">Конвертировать</button>
-</form>
-<p style="color: darkred; font-weight: bold">Результат: <span th:text="${result}"></span></p>
+<div style="margin-left: 100px; margin-top: 100px">
+    <h1 style="font-size: 50px">
+        Конвертер температуры:
+    </h1>
+    <form action="/converter" method="post">
+        <div>
+            <label for="value" style="font-size: 30px">Введите искомое значение:</label>
+            <input type="text" id="value" name="value" style="font-size: 20px">
+        </div>
+        <br>
+        <div>
+            <label style="font-size: 30px">Перевести в градусы:</label>
+            <select name="scale" style="font-size: 20px">
+                <option value="C">Цельсия</option>
+                <option value="F">Фаренгейта</option>
+            </select>
+        </div>
+        <br>
+        <button type="submit"
+                style="border-radius: 20px;
+                font-size: 20px;
+                background-color: yellow;
+height: 50px">
+            Конвертировать
+        </button>
+    </form>
+    <p style="color: darkred; font-weight: bold; font-size: 30px">Результат: <span th:text="${result}"></span></p>
+</div>
 </body>
 </html>
