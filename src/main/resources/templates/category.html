@@ -16,7 +16,7 @@
         </button>
     </form>
     <div>
-        <p>Результат: </p>
+        <p><span th:text="${message}"></span></p>
     </div>
     <br>
     <p>КАТЕГОРИИ ТОВАРОВ:</p>
@@ -30,6 +30,24 @@
             </li>
         </ul>
     </div>
+</div>
+<br>
+<div>
+    <form action="/products" method="post">
+        <label>
+            Введите наименование товара:
+        </label><br>
+        <input type="text" name="name"><br>
+
+        <label>
+            Выберите категорию:
+        </label><br>
+        <select name="categoryName">
+            <option th:each="category: ${categories}"></option>
+        </select>
+
+        <button type="submit">Добавить товар</button>
+    </form>
 </div>
 </body>
 </html>

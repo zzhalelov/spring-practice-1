@@ -7,5 +7,5 @@ import lombok.Getter;
 @AllArgsConstructor
 public class Product {
     private String name;
-    private int price;
+    private String categoryName;
 }
