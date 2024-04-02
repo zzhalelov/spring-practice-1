@@ -33,7 +33,7 @@
 </div>
 <br>
 <div>
-    <form action="/products" method="post">
+    <form action="/category" method="post">
         <label>
             Введите наименование товара:
         </label><br>
@@ -42,10 +42,9 @@
         <label>
             Выберите категорию:
         </label><br>
-        <select name="categoryName">
-            <option th:each="category: ${categories}"></option>
+        <select name="categoryName" style="width: 50px">
+            <option th:text="${category.name}" th:each="category: ${categories}" th:value="${category.name}"></option>
         </select>
-
         <button type="submit">Добавить товар</button>
     </form>
 </div>
