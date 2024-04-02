@@ -34,6 +34,7 @@ public class CategoryController {
 
         if (exists) {
             model.addAttribute("message", "Такая категория уже есть");
+            model.addAttribute("categories", categoryList);
         } else {
             Category category = new Category(name);
             categoryList.add(category);
@@ -62,6 +63,6 @@ public class CategoryController {
             productList.add(product);
             model.addAttribute("message", "Товар добавлен!!!");
         }
-        return "products";
+        return "category";
     }
 }
